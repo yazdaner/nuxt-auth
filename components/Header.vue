@@ -1,7 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Yazdaner</a>
+            <NuxtLink class="navbar-brand" to="/">yazdaner</NuxtLink>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -10,13 +10,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <NuxtLink class="nav-link" to="/">Home</NuxtLink>
+                        <NuxtLink class="nav-link" activeClass="active" to="/">Home</NuxtLink>
                     </li>
+
                     <li class="nav-item">
-                        <NuxtLink class="nav-link" to="/post">Posts</NuxtLink>
+                        <a class="nav-link" href="#">Posts</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Profile</a>
                     </li>
@@ -24,7 +25,7 @@
                         <a class="nav-link" href="#">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <NuxtLink class="nav-link" activeClass="active" to="/auth/register">Register</NuxtLink>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
