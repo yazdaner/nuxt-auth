@@ -44,6 +44,8 @@ const formData = reactive({
     c_password: "",
 });
 
+const {authUser} = useAuth();
+
 async function register() {
     loading.value = true;
     try {
@@ -51,6 +53,7 @@ async function register() {
             method: 'POST',
             body: formData
         })
+        authUser.value = user;
         return navigateTo('/');
     } catch (error) {
         errors.value = Object.values(error.data.data).flat();

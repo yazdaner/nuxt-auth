@@ -34,6 +34,7 @@ const formData = reactive({
     password: "",
 });
 
+const {authUser} = useAuth();
 async function login() {
     loading.value = true;
     try {
@@ -41,6 +42,7 @@ async function login() {
             method: 'POST',
             body: formData
         })
+        authUser.value = user;
         return navigateTo('/');
     } catch (error) {
         errors.value = Object.values(error.data.data).flat();
