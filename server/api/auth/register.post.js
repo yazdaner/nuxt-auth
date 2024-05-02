@@ -4,18 +4,19 @@ export default defineEventHandler(async (event) => {
     try {
         const data = await $fetch('http://localhost:8000/api/register' , {
             method: 'POST',
-            body: 'body',
+            body,
             headers: {
                 'Accept': 'application/json',
             }
         })
-
-        console.log(data);
-        return data;
+        setCookie(event,'token',data.token,{
+            httpOnly : true,
+            secure : true,
+            maxAge : 60 * 60 * 24 * 7,
+            path : '/'
+        });
+        return data.user;
     } catch (error) {
-        console.log(error);
         return error
     }
-
-    return body
 })
