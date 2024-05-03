@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Posts</a>
+                        <NuxtLink class="nav-link" activeClass="active" to="/posts">Posts</NuxtLink>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
