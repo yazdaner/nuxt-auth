@@ -27,6 +27,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+    middleware: 'guest',
+})
 const loading = ref(false);
 const errors = ref([]);
 const formData = reactive({
